@@ -15,7 +15,7 @@ public class daban {
     String manv;
     String masp;
     String magg;
-    Date ngaymua;
+    String ngaymua;
     double dongia;
     int soluong;
     double giamgia;
@@ -53,11 +53,11 @@ public class daban {
         this.magg = magg;
     }
 
-    public Date getNgaymua() {
+    public String getNgaymua() {
         return ngaymua;
     }
 
-    public void setNgaymua(Date ngaymua) {
+    public void setNgaymua(String ngaymua) {
         this.ngaymua = ngaymua;
     }
 
