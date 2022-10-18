@@ -15,6 +15,15 @@ public class thongke {
     double gia;
     double doanhthu;
     int sott;
+    double tongdt;
+
+    public double getTongdt() {
+        return tongdt;
+    }
+
+    public void setTongdt(double tongdt) {
+        this.tongdt = tongdt;
+    }
 
     public int getIdtk() {
         return idtk;
