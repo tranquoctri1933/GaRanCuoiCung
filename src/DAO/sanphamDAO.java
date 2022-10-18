@@ -7,6 +7,7 @@ package DAO;
 import java.sql.ResultSet;
 import Utils.jdbchelper;
 import entity.sanpham;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -94,4 +95,21 @@ public class sanphamDAO extends chinhDAO<sanpham, String> {
         String sql="update sanpham set soluongton=soluongton + CAST(? AS int) where masp=?";
         jdbchelper.update(sql,soluong,masp);        
     } 
+    
+    public double tongtien(Object dongia, int soluong, Object giamgia, Object masp) throws SQLException{
+        String sql="select CAST(? AS float) * ? - cast(? as float) from sanpham where masp=?";
+        double tongtien=(Double)jdbchelper.vaule(sql, dongia,soluong,giamgia,masp);
+        return tongtien;
+    }
+    
+    public double tongtientru(Object soluong, Object masp){
+        String sql="select dongia * cast(? as int) - giamgia from sanpham where masp=?";
+        double tongtien=(Double)jdbchelper.vaule(sql,soluong,masp);
+        return tongtien;
+    }
+    //public int dem(){
+       //String sql="select count(*) from sanpham";
+        //int count=(Integer)jdbchelper.vaule(sql);
+       // return count;
+    
 }

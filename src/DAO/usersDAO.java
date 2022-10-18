@@ -71,5 +71,8 @@ public class usersDAO extends chinhDAO<users, String> {
             throw new RuntimeException(e);
         }
     }
-
+    public void updatematkhau(String matkhaumoi, String tentk){
+        String sql="UPDATE users SET matkhau=? where tentk=? ";
+        jdbchelper.update(sql, matkhaumoi,tentk);
+    }
 }

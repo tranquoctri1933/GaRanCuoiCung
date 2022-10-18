@@ -260,10 +260,10 @@
                                   <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                                   <Component id="btnxacnhan" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="jTextField3" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jTextField4" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jTextField5" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jTextField6" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txttaikhoandoi" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtpasscu" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtpassmoi1" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtpassmoi2" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace pref="57" max="32767" attributes="0"/>
                       </Group>
@@ -277,22 +277,22 @@
                           <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Component id="jLabel7" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txttaikhoandoi" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField4" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtpasscu" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField5" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtpassmoi1" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField6" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtpassmoi2" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
@@ -352,13 +352,13 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnxacnhanActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField3">
+                <Component class="javax.swing.JTextField" name="txttaikhoandoi">
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField4">
+                <Component class="javax.swing.JPasswordField" name="txtpasscu">
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField5">
+                <Component class="javax.swing.JPasswordField" name="txtpassmoi1">
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField6">
+                <Component class="javax.swing.JPasswordField" name="txtpassmoi2">
                 </Component>
               </SubComponents>
             </Container>

@@ -8,6 +8,7 @@ import DAO.usersDAO;
 import Utils.Auth;
 import Utils.MsgBox;
 import entity.users;
+import java.util.List;
 
 /**
  *
@@ -52,10 +53,10 @@ public class TaiKhoan extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         btnhuy = new javax.swing.JButton();
         btnxacnhan = new javax.swing.JButton();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
+        txttaikhoandoi = new javax.swing.JTextField();
+        txtpasscu = new javax.swing.JPasswordField();
+        txtpassmoi1 = new javax.swing.JPasswordField();
+        txtpassmoi2 = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -211,10 +212,10 @@ public class TaiKhoan extends javax.swing.JFrame {
                         .addComponent(btnhuy, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(36, 36, 36)
                         .addComponent(btnxacnhan))
-                    .addComponent(jTextField3)
-                    .addComponent(jTextField4)
-                    .addComponent(jTextField5)
-                    .addComponent(jTextField6))
+                    .addComponent(txttaikhoandoi)
+                    .addComponent(txtpasscu)
+                    .addComponent(txtpassmoi1)
+                    .addComponent(txtpassmoi2))
                 .addContainerGap(57, Short.MAX_VALUE))
         );
         doimatkhauLayout.setVerticalGroup(
@@ -225,19 +226,19 @@ public class TaiKhoan extends javax.swing.JFrame {
                 .addGap(38, 38, 38)
                 .addGroup(doimatkhauLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel7)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txttaikhoandoi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(doimatkhauLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtpasscu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(doimatkhauLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtpassmoi1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(doimatkhauLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtpassmoi2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28)
                 .addGroup(doimatkhauLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnhuy)
@@ -296,10 +297,8 @@ public class TaiKhoan extends javax.swing.JFrame {
     }//GEN-LAST:event_btnhuyActionPerformed
 
     private void btnxacnhanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnxacnhanActionPerformed
-        taikhoan.removeAll();
-        taikhoan.add(dangnhap);
-        taikhoan.repaint();
-        taikhoan.revalidate();
+
+        doitmatkhau();
     }//GEN-LAST:event_btnxacnhanActionPerformed
 
     /**
@@ -356,13 +355,13 @@ public class TaiKhoan extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
     private javax.swing.JPanel taikhoan;
     private javax.swing.JPasswordField txtpass;
+    private javax.swing.JPasswordField txtpasscu;
+    private javax.swing.JPasswordField txtpassmoi1;
+    private javax.swing.JPasswordField txtpassmoi2;
     private javax.swing.JTextField txttaikhoan;
+    private javax.swing.JTextField txttaikhoandoi;
     // End of variables declaration//GEN-END:variables
     usersDAO dao = new usersDAO();
 
@@ -387,5 +386,30 @@ public class TaiKhoan extends javax.swing.JFrame {
             }
 
         }
+    }
+
+    private void doitmatkhau() {
+        String manv = txttaikhoandoi.getText();
+        String matKhau = new String(txtpasscu.getPassword());
+        String matKhauMoi = new String(txtpassmoi1.getPassword());
+        String matKhauMoi2 = new String(txtpassmoi2.getPassword());
+        List<users> list = dao.selectAll();
+        for (users us : list) {
+            if (!us.getTentk().equalsIgnoreCase(manv)) {
+                MsgBox.alert(this, "sai tài khoản!");
+                break;
+            } else if (!us.getMatkhau().equalsIgnoreCase(matKhau)) {
+                MsgBox.alert(this, "Sai mật khẩu!");
+                break;
+            } else if (!matKhauMoi.equalsIgnoreCase(matKhauMoi2)) {
+                MsgBox.alert(this, "Xác nhập mật khẩu không đúng!");
+                break;
+            } else {
+                dao.updatematkhau(matKhauMoi, manv);
+                MsgBox.alert(this,"Đổi mật khẩu thành công");
+                break;
+            }
+        }
+    
     }
 }
