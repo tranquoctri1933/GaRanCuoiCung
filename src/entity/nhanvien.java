@@ -20,9 +20,30 @@ public class nhanvien {
     Date ngaysinh;
     String email;
     boolean gioitinh;
+    boolean trangthai;
+
+//    public nhanvien() {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    }
+    
+    public nhanvien() {
+    }
 
     public String getManv() {
         return manv;
+    }
+
+    public nhanvien(String manv, String tennv, String matkhau, boolean vaitro, String diachi, String sodt, Date ngaysinh, String email, boolean gioitinh, boolean trangthai) {
+        this.manv = manv;
+        this.tennv = tennv;
+        this.matkhau = matkhau;
+        this.vaitro = vaitro;
+        this.diachi = diachi;
+        this.sodt = sodt;
+        this.ngaysinh = ngaysinh;
+        this.email = email;
+        this.gioitinh = gioitinh;
+        this.trangthai = trangthai;
     }
 
     public void setManv(String manv) {
@@ -45,7 +66,7 @@ public class nhanvien {
         this.matkhau = matkhau;
     }
 
-    public boolean isVaitro() {
+    public boolean getVaitro() {
         return vaitro;
     }
 
@@ -85,8 +106,16 @@ public class nhanvien {
         this.email = email;
     }
 
-    public boolean isGioitinh() {
+    public boolean getGioitinh() {
         return gioitinh;
+    }
+
+    public boolean getTrangthai() {
+        return trangthai;
+    }
+
+    public void setTrangthai(boolean trangthai) {
+        this.trangthai = trangthai;
     }
 
     public void setGioitinh(boolean gioitinh) {
