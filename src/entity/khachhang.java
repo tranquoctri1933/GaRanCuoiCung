@@ -9,60 +9,83 @@ package entity;
  * @author Thinkpad T490
  */
 public class khachhang {
-    String idkh;
-    String hoten;
-    String diachi;
-    String email;
-    boolean gioitinh;
-    String mota;
+    String Idkh;
+    String Hoten;
+    String Diachi;
+    String Sdt;
+    String Email;
+    boolean Gioitinh;
+    String Mota;
 
+    public khachhang(String Idkh, String Hoten, String Diachi, String Sdt, String Email, boolean Gioitinh, String Mota) {
+        this.Idkh = Idkh;
+        this.Hoten = Hoten;
+        this.Diachi = Diachi;
+        this.Sdt = Sdt;
+        this.Email = Email;
+        this.Gioitinh = Gioitinh;
+        this.Mota = Mota;
+    }
+    public khachhang(){
+        
+    }
     public String getIdkh() {
-        return idkh;
+        return Idkh;
     }
 
-    public void setIdkh(String idkh) {
-        this.idkh = idkh;
+    public void setIdkh(String Idkh) {
+        this.Idkh = Idkh;
     }
 
     public String getHoten() {
-        return hoten;
+        return Hoten;
     }
 
-    public void setHoten(String hoten) {
-        this.hoten = hoten;
+    public void setHoten(String Hoten) {
+        this.Hoten = Hoten;
     }
 
     public String getDiachi() {
-        return diachi;
+        return Diachi;
     }
 
-    public void setDiachi(String diachi) {
-        this.diachi = diachi;
+    public void setDiachi(String Diachi) {
+        this.Diachi = Diachi;
+    }
+
+    public String getSdt() {
+        return Sdt;
+    }
+
+    public void setSdt(String Sdt) {
+        this.Sdt = Sdt;
     }
 
     public String getEmail() {
-        return email;
+        return Email;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setEmail(String Email) {
+        this.Email = Email;
     }
 
     public boolean isGioitinh() {
-        return gioitinh;
+        return Gioitinh;
     }
 
-    public void setGioitinh(boolean gioitinh) {
-        this.gioitinh = gioitinh;
+    public void setGioitinh(boolean Gioitinh) {
+        this.Gioitinh = Gioitinh;
     }
 
     public String getMota() {
-        return mota;
+        return Mota;
     }
 
-    public void setMota(String mota) {
-        this.mota = mota;
+    public void setMota(String Mota) {
+        this.Mota = Mota;
     }
+
+
     
     
 }
