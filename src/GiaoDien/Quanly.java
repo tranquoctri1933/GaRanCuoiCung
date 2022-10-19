@@ -25,7 +25,7 @@ public class Quanly extends javax.swing.JFrame {
     ArrayList<khachhang> list = new ArrayList<khachhang>();
     int current = 0;
     String userName="sa";
-    String password="123";
+    String password="1510";
     String url = "jdbc:sqlserver://localhost:1433;DatabaseName=garan;encrypt=true;trustServerCertificate=true";
     
     public Quanly() {
