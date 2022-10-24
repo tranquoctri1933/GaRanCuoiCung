@@ -19,7 +19,7 @@ public class jdbchelper {
     static String dburl = "jdbc:sqlserver://localhost:1433;databaseName=garan;"
                 + "encrypt=true;trustServercertificate=true;sslProtocol=TLSv1.2";
     static String user="sa";
-    static String pass="1510";
+    static String pass="songlong";
     static{
         try {
             Class.forName(driver);
@@ -69,7 +69,7 @@ public class jdbchelper {
             finally{
                 stmt.getConnection().close();
             }
-        } catch (Exception e) {
+        } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }

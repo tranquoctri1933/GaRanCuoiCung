@@ -14,8 +14,13 @@ public class sanpham {
     double dongia;
     double giamgia;
     int soluongton;
-    String maloaihang;
-
+    String hinh;
+    
+    @Override
+    public String toString() {
+        return this.tensp;
+    }
+    
     public String getMasp() {
         return masp;
     }
@@ -56,12 +61,12 @@ public class sanpham {
         this.soluongton = soluongton;
     }
 
-    public String getMaloaihang() {
-        return maloaihang;
+    public String getHinh() {
+        return hinh;
     }
 
-    public void setMaloaihang(String maloaihang) {
-        this.maloaihang = maloaihang;
+    public void setHinh(String hinh) {
+        this.hinh = hinh;
     }
     
     

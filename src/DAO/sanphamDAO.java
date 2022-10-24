@@ -17,8 +17,8 @@ import java.util.List;
  */
 public class sanphamDAO extends chinhDAO<sanpham, String> {
 
-    String INSERT_SQL = "INSERT INTO sanpham(masp,tensp,dongia,giamgia,soluongton,maloaihang) VALUES(?,?,?,?,?,?)";
-    String UPDATE_SQL = "UPDATE sanpham SET tenspu=?, dongia=?, giamgia=?, soluongton=?,maloaihang=? WHERE masp=?";
+    String INSERT_SQL = "INSERT INTO sanpham(masp,tensp,dongia,giamgia,soluongton,hinh) VALUES(?,?,?,?,?,?)";
+    String UPDATE_SQL = "UPDATE sanpham SET tensp=?, dongia=?, giamgia=?, soluongton=?, hinh=? WHERE masp=?";
     String DELETE_SQL = "DELETE FROM sanpham WHERE masp=?";
     String SELECT_ALL_SQL = "SELECT * FROM sanpham";
     String SELECT_BY_ID_SQL = "SELECT * FROM sanpham WHERE masp=?";
@@ -26,13 +26,13 @@ public class sanphamDAO extends chinhDAO<sanpham, String> {
     @Override
     public void insert(sanpham entity) {
         jdbchelper.update(INSERT_SQL,
-                entity.getMasp(), entity.getTensp(), entity.getDongia(), entity.getGiamgia(), entity.getSoluongton(), entity.getMaloaihang());
+                entity.getMasp(), entity.getTensp(), entity.getDongia(), entity.getGiamgia(), entity.getSoluongton(), entity.getHinh());
     }
 
     @Override
     public void update(sanpham entity) {
         jdbchelper.update(UPDATE_SQL,
-                entity.getTensp(), entity.getDongia(), entity.getGiamgia(), entity.getSoluongton(), entity.getMaloaihang(), entity.getMasp());
+                entity.getTensp(), entity.getDongia(), entity.getGiamgia(), entity.getSoluongton(), entity.getHinh(), entity.getMasp());
     }
 
     @Override
@@ -66,7 +66,7 @@ public class sanphamDAO extends chinhDAO<sanpham, String> {
                 entity.setDongia(rs.getDouble("dongia"));
                 entity.setGiamgia(rs.getDouble("giamgia"));
                 entity.setSoluongton(rs.getInt("soluongton"));
-                entity.setMaloaihang(rs.getString("maloaihang"));
+                entity.setHinh(rs.getString("hinh"));
                 list.add(entity);
             }
             rs.getStatement().getConnection().close();
@@ -111,5 +111,10 @@ public class sanphamDAO extends chinhDAO<sanpham, String> {
        //String sql="select count(*) from sanpham";
         //int count=(Integer)jdbchelper.vaule(sql);
        // return count;
+
+//    public List<sanpham> selectByKhoHang(String malh) {
+//        String sql = "select * from sanpham where malh=?";
+//        return this.selectBySql(sql, malh);
+//    }
     
 }

@@ -6,12 +6,17 @@ package entity;
 
 /**
  *
- * @author Thinkpad T490
+ * @author asus
  */
 public class khohang {
     String malh;
     String tenlh;
     int soluongton;
+    
+    @Override
+    public String toString() {
+        return this.tenlh;
+    }
 
     public String getMalh() {
         return malh;
